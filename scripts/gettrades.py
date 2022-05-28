@@ -123,15 +123,12 @@ def run():
         )
         for d in deposits:
 
-            if d.create_time != d.update_time:
-                print("Error, create_time is not equal to update_time")
-                return
-
             if d.address in ["INTERNAL_DEPOSIT"]:
                 continue
 
-            if d.amount == 124.34512:
-                continue
+            #TODO optionnel
+            # if d.amount == 124.34512:
+            #     continue
 
             quantity = d.amount
             currency = d.coin.name
