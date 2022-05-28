@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Cryptomonnaies</h1>
+
+<h2>Résumé : {{ worth|floatformat:-2 }} €</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Quantité</th>
+			<th>Valeur</th>
+			<th>Coût</th>
+			<th>Coût réel</th>
+		</tr>
+	</thead>
+	</thead>
+	<tbody>
+		{% for row in summary %}
+		<tr>
+			{% for col in row %}
+				{% if forloop.counter0 == 0 %}
+					<td>{{ col }}</td>
+				{% elif forloop.counter0 == 1 %}
+					<td>{{ col|floatformat:-8 }}</td>
+				{% else %}
+					<td>{{ col|floatformat:-2 }} €</td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<h2>Historique</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Plus value</th>
+			<th>Plus value réelle</th>
+			<th>Plus value à venir</th>
+			<th>Plus value réelle à venir</th>
+			<th>Valeur</th>
+			<th>Revenus</th>
+			<th>Investissements</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in months %}
+		<tr>
+			{% for col in row %}
+				{% if forloop.counter0 == 0 %}
+					<td>{{ col }}</td>
+				{% else %}
+					<td>{{ col|floatformat:-2 }} €</td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<h2>Simulation</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>0 %</th>
+			<th>25 %</th>
+			<th>50 %</th>
+			<th>75 %</th>
+			<th>100 %</th>
+			<th>Gain</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in months_check %}
+		<tr>
+			{% for col in row %}
+				{% if forloop.counter0 == 0 %}
+					<td>{{ col }}</td>
+				{% else %}
+					<td>{{ col|floatformat:-2 }} €</td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<h2>Impôts</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>211 Date de la cession</th>
+			<th>212 Valeur globale</th>
+			<th>213 Prix de cession</th>
+			<th>214 Frais de cession</th>
+			<th>215 Prix de cession net des frais</th>
+			<th>216 Soulte reçue ou versée</th>
+			<th>217 Prix de cession net des soultes</th>
+			<th>218 Prix de cession net des frais et soultes</th>
+			<th>220 Prix total d'acquisition</th>
+			<th>221 Fractions de capital initial contenues dans le prix total d'acquisition</th>
+			<th>222 Soultes reçues en cas d'échanges antérieurs à la cession</th>
+			<th>223 Prix total d'acquisition</th>
+			<th>Plus-value ou moins value</th>
+			<th>Fraction</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in taxes %}
+		<tr>
+			{% for col in row %}
+				{% if forloop.counter0 == 0 %}
+					<td>{{ col }}</td>
+				{% else %}
+					<td>{{ col|floatformat:-2 }} €</td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}
