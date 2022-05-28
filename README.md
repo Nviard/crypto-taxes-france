@@ -52,9 +52,15 @@ Rien.
 
 ## importcryptoexchange
 
+Optionnel : Ajouter des bénéfices du supercharger impossible à exporter.
+
 ## importnexo
 
+Rien.
+
 ## importuphold
+
+Optionnel : Gérer les envois vers un autre compte personnel (exemple commenté avec ethereum vers Crypto.com).
 
 # Ajout des données
 
@@ -72,13 +78,19 @@ Ce script permet de récupérer les dernières transactions réalisées sur Cryp
 
 ## importcryptoapp
 
-Ce script permet d'importer les données provenant de l'export CSV de Crypto.com App.
+Ce script permet d'importer les données provenant de l'export CSV de Crypto.com App depuis le fichier cryptocom.csv.
 
 ## importcryptoexchange
 
+Ce script permet d'importer les données provenant de l'export CSV de Crypto.com Exchange depuis les fichiers STAKE_INTEREST.csv et TRADE_FEE_REBATE.csv.
+
 ## importnexo
 
+Ce script permet d'importer les données provenant de l'export CSV de Nexo depuis le fichier nexo.csv
+
 ## importuphold
+
+Ce script permet d'importer les données provenant de l'export CSV d'Uphold depuis le fichier uphold.csv
 
 # Lancement du site
 
