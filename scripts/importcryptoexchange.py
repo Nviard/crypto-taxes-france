@@ -76,32 +76,32 @@ def run():
             t.save()
 
     # CryptocomSupercharger.objects.all().delete()
-    for currency, amount, date in (
-        #TODO optionnel
+
+    #TODO optionnel
+    # for currency, amount, date in (
         # (
         #     "UNI",
         #     1,
         #     datetime(2020, 11, 1, 8, 0, 0).replace(tzinfo=timezone.utc),
         # ),
-        ,
-    ):
-        try:
-            currency = Coin.objects.get(pk=currency)
-        except ObjectDoesNotExist:
-            currency = Coin(currency, last_update=date(1900, 1, 1))
-            currency.save()
-        for _ in range(30):
-            t = CryptocomTradeFeeRebate(
-                time_executed=date,
-                typ="deposit",
-                bought_quantity=amount,
-                bought_currency=currency,
-                sold_quantity=None,
-                sold_currency=None,
-                fee_quantity=None,
-                fee_currency=None,
-                classification="mined",
-                wallet=wallet,
-            )
-            t.save()
-            date += timedelta(days=1)
+    # ):
+    #     try:
+    #         currency = Coin.objects.get(pk=currency)
+    #     except ObjectDoesNotExist:
+    #         currency = Coin(currency, last_update=date(1900, 1, 1))
+    #         currency.save()
+    #     for _ in range(30):
+    #         t = CryptocomTradeFeeRebate(
+    #             time_executed=date,
+    #             typ="deposit",
+    #             bought_quantity=amount,
+    #             bought_currency=currency,
+    #             sold_quantity=None,
+    #             sold_currency=None,
+    #             fee_quantity=None,
+    #             fee_currency=None,
+    #             classification="mined",
+    #             wallet=wallet,
+    #         )
+    #         t.save()
+    #         date += timedelta(days=1)

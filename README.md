@@ -44,11 +44,41 @@ Il faut rechercher les commentaires `#TODO` pour repérer où modifier des param
 
 Ajouter les paramètres d'API crypto.com. Il est possible de les stocker dans le gestionnaire d'identités windows.
 
+Optionnel : Ajouter des dépôts à ignorer, s'ils sont déja pris en compte par un autre script.
+
+## importcryptoapp
+
+Rien.
+
+## importcryptoexchange
+
+## importnexo
+
+## importuphold
+
 # Ajout des données
+
+Les donnèes peuvent être ajoutées en exécutant :
+
+```
+python manage.py runscript [scriptname]
+```
+
+À l'exception de gettrades, les scripts suppriment et recréent les données dans la base de données.
 
 ## gettrades
 
 Ce script permet de récupérer les dernières transactions réalisées sur Crypto.com Exchange.
+
+## importcryptoapp
+
+Ce script permet d'importer les données provenant de l'export CSV de Crypto.com App.
+
+## importcryptoexchange
+
+## importnexo
+
+## importuphold
 
 # Lancement du site
 
