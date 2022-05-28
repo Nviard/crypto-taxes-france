@@ -16,7 +16,10 @@ Exécutez les commandes suivantes :
 ```
 pip install django django-extensions pycoingecko
 django-admin startproject mysite .
+python manage.py createsuperuser
 ```
+
+Créez le nom et mot de passe de votre superutilisateur.
 
 Dans le fichier mysite/settings.py
 
@@ -90,7 +93,7 @@ Ce script permet d'importer les données provenant de l'export CSV de Nexo depui
 
 ## importuphold
 
-Ce script permet d'importer les données provenant de l'export CSV d'Uphold depuis le fichier uphold.csv
+Ce script permet d'importer les données provenant de l'export CSV d'Uphold depuis le fichier uphold.csv. Il remplit aussi une plateforme Cred si vous l'avez utilisé depuis Uphold.
 
 # Lancement du site
 
@@ -100,6 +103,30 @@ Exécutez la commande suivante :
 python manage.py runserver
 ```
 
-Se rendre à l'url [http://localhost:8000/crypto/]
+Se rendre à l'url [http://localhost:8000/crypto/](Crypto)
+
+
+Si vous obtenez l'erreur "Could not find coin with the given id", il faut renseigner manuellement les identifiants des monnaies dans [http://localhost:8000/admin/crypto/coin/](Coin) en se connectant avec votre superuser.
+
+Les identifiants doivent correspondre à ceux de [https://api.coingecko.com/api/v3/coins/list](Coingecko).
+Profitez en aussi pour vérifier que les monnaies fiat sont bien identifiées comme telles.
 
 # Interface
+
+L'url [http://localhost:8000/crypto/](Crypto) vous présente les informations utiles. Elles peuvent être filtrées par plateforme en ajoutant `/Uphold`, `/Supercharger`, `/Crypto.com Exchange`, `/Crypto.com App`, `/Cred`, `/Crypto Earn` ou `/Nexo` à la fin de l'url.
+
+## Résumé
+
+Donne la valeur de vos cryptomonnaies. Coût est calculé en fonction de la valeur en euros au moment de l'achat. Coût réel est calculé à partir de la proportion d'euros investis ayant servi à acquérir la monnaie.
+
+## Historique
+
+Donne un suivi mensuel des valeurs.
+
+## Simulation
+
+Donne une idée de la valeur qu'auraient eu vos cryptos en ne réalisant que 0 25 50 ou 75% des échanges entre cryptos. Gain représente le gain que vous avez ou allez réalisé en n'ayant pas simplement HODL.
+
+## Impôts
+
+Répertorie vos cessions et indique les valeurs à renseigner dans les formulaires de déclarations de plus values.
